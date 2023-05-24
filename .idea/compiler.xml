@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="StationDataCollector" />
+        <module name="DataCollectionDispatcher" />
+        <module name="DataCollectionReceiver" />
+        <module name="PDFGenerator" />
+        <module name="JavaFXApp" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DataCollectionDispatcher" target="17" />
+      <module name="DataCollectionReceiver" target="17" />
+      <module name="JavaFXApp" target="17" />
+      <module name="PDFGenerator" target="17" />
+      <module name="StationDataCollector" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
