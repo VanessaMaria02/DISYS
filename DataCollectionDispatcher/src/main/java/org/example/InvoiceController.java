@@ -17,12 +17,12 @@ public class InvoiceController {
     }
 
     @GetMapping("/{customer-id}")
-    public ResponseEntity<String> getInvoice(@PathVariable("customer-id") String customerId) {
+    public String getInvoice(@PathVariable("customer-id") String customerId) {
         // Retrieve the invoice PDF with download link and creation time
         // Implement the logic here
 
 
-        return ResponseEntity.notFound().build(); // Return 404 Not Found if the invoice is not available
+        return "404 NOT FOUND";
     }
 }
 
