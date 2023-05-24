@@ -1,4 +1,4 @@
-package org.example;
+package at.technikum;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,4 +25,3 @@ public class InvoiceController {
         return "404 NOT FOUND";
     }
 }
-
