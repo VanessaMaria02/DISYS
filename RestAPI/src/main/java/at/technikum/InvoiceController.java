@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/invoices")
 public class InvoiceController {
 
+    private final static String BROKE_URL = "http://localhost:8082/invoices/";
+
     @PostMapping("/{customer-id}")
     public ResponseEntity<String> startDataGathering(@PathVariable("customer-id") String customerId) {
         // Start the data gathering job and send a start message with the customer ID
