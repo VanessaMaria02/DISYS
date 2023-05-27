@@ -10,8 +10,14 @@
         <module name="DataCollectionDispatcher" />
         <module name="DataCollectionReceiver" />
         <module name="PDFGenerator" />
+        <module name="demo" />
         <module name="JavaFXApp" />
       </profile>
     </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo" options="-parameters" />
+    </option>
   </component>
 </project>

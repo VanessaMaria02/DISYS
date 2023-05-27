@@ -12,6 +12,10 @@
         <option value="$PROJECT_DIR$/StationDataCollector/pom.xml" />
         <option value="$PROJECT_DIR$/DataCollectionReceiver/pom.xml" />
         <option value="$PROJECT_DIR$/DataCollectionDispatcher/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/RestBasedApi/pom.xml" />
+        <option value="$PROJECT_DIR$/RestAPI/pom.xml" />
+        <option value="$PROJECT_DIR$/RestApi1/pom.xml" />
       </list>
     </option>
   </component>

@@ -3,27 +3,36 @@ package at.technikum;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+
 @RestController
 @RequestMapping("/invoices")
 public class InvoiceController {
 
     private final static String BROKE_URL = "http://localhost:8082/invoices/";
+    private RabbitTamplate rabbitTamplate;
 
-    @PostMapping("/{customer-id}")
-    public ResponseEntity<String> startDataGathering(@PathVariable("customer-id") String customerId) {
-        // Start the data gathering job and send a start message with the customer ID
-        // to the Data Collection Dispatcher
-        // Implement the logic here
 
-        return ResponseEntity.ok("Data gathering job started");
+    @PostMapping("/invoices/{costumer-id}")
+    public void startDataGathering(@PathVariable String costumerId) {
+        if (isvalid(Id)) {
+            rabbitTamplate.convertAndSend("\"data-collection-exchange\", \"start\",costumerId");
+        }
     }
 
-    @GetMapping("/{customer-id}")
-    public String getInvoice(@PathVariable("customer-id") String customerId) {
-        // Retrieve the invoice PDF with download link and creation time
-        // Implement the logic here
+
+    @GetMapping("/invoices/{id}")
+    public String getInvoice(@PathVariable("invoices/{costumer-id}") String Id) {
+        if (!isvalid(id)) {
+            return " 404 NOT FOUND"
+        } else {
 
 
-        return "404 NOT FOUND";
+
+
+        }
+
+
     }
 }
+
