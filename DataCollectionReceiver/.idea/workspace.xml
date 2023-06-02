@@ -25,7 +25,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/vfich/IdeaProjects/DISYS/DataCollectionReceiver",
+    "last_opened_file_path": "C:/Users/vfich/IdeaProjects/DISYS/PDFGenerator",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -40,6 +44,7 @@
       <updated>1684846648343</updated>
       <workItem from="1684846649443" duration="86000" />
       <workItem from="1685650580064" duration="72000" />
+      <workItem from="1685691857476" duration="1206000" />
     </task>
     <servers />
   </component>

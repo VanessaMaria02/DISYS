@@ -1,34 +1,22 @@
 package com.example.restapi;
 
 
+import com.example.restapi.services.rabbitmq;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/invoices")
 public class InvoiceController {
-    private final static String BROKE_URL = "http://localhost:8082/invoices/";
-    private RabbitTemplate rabbitTamplate;
+    private rabbitmq rabbitmq = new rabbitmq();
 
 
-    @PostMapping("/invoices/{costumer-id}")
-    public void startDataGathering(@PathVariable String costumerId) {
-        if (isvalid(costumerId)) {
-            rabbitTamplate.convertAndSend("\"data-collection-exchange\", \"start\",costumerId");
-        }
+    @PostMapping("/invoices/{id}")
+    public void startDataGathering(@PathVariable String id) {
+        rabbitmq.send("red", id);
     }
 
 
     @GetMapping("/invoices/{id}")
-    public String getInvoice(@PathVariable("invoices/{costumer-id}") String Id) {
-        if (!isvalid(Id)) {
-            return " 404 NOT FOUND";
-        } else {
-
-
-
-
-        }
-
-
+    public String getInvoice(@PathVariable String id) {
+        return "not implementet jet";
     }
 }
