@@ -77,6 +77,7 @@ public class rabbitmq {
             finalmessage += message;
             System.out.println(" [x] Received '" + message + "'");
             counter.getAndIncrement();
+            System.out.println(counter);
             if(Integer.parseInt(String.valueOf(counter)) == hmany){
                 send("yellow", finalmessage);
             }

@@ -4,6 +4,7 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
+import org.example.CollectionDispatcher;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -13,6 +14,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 
 public class rabbitmq {
+
+    private static CollectionDispatcher collectionDispatcher = new CollectionDispatcher();
     private final String host = "localhost"; // RabbitMQ host
     private final int port = 30003; // RabbitMQ port
 
@@ -48,12 +51,8 @@ public class rabbitmq {
             //then it should send the data collection receiver how many messages he should accept
             //and it should send to the station data collector the ids of the database, the port, and the customer ids
             //for each station their should be a own message
-            for (int i = 0; i < 3 ; i++) {
-                System.out.println(" ["+i+"] Received '" + message + "'");
-                counter.getAndIncrement();
-                send("green", String.valueOf(message));
-            }
-            send("purple", String.valueOf(3));
+            System.out.println(" [x] Received '" + message + "'");
+            collectionDispatcher.getAllStations(String.valueOf(message));
 
         };
         channel.basicConsume(queue_Name, true, deliverCallback, consumerTag -> { });
