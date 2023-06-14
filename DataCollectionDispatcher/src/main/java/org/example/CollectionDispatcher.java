@@ -40,7 +40,7 @@ public class CollectionDispatcher {
             System.out.println(e.getMessage());
         }
         System.out.println("counter:"+counter);
-        rabbitmq.send("purple", String.valueOf(counter));
+        rabbitmq.send("purple", customerID+";"+counter);
     }
 
 }
