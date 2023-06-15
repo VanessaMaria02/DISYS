@@ -4,6 +4,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.util.Duration;
@@ -23,10 +24,18 @@ public class HelloController {
 
     @FXML
     private Label pdfStatues;
+
+    @FXML
+    private TextField downloadlink;
+
+    @FXML
+    private Button button;
+
     private Timeline timeline;
 
     @FXML
     protected void onGetInvoice()  {
+        button.setDisable(true);
         pdfStatues.setText("sending request");
 
         String cuID = userId.getText();
@@ -42,27 +51,29 @@ public class HelloController {
                     HttpResponse<String> response = HttpClient.newHttpClient()
                             .send(request, HttpResponse.BodyHandlers.ofString());
 
-                    timeline = new Timeline(new KeyFrame(Duration.seconds(5), (ActionEvent event) ->{
-                        checkInvoiceStatus(urlString);
-                    }));
-                    timeline.setCycleCount(Timeline.INDEFINITE);
-                    timeline.play();
-
-
                     if(response.statusCode() == 200){
                         pdfStatues.setText("waiting for Pdf");
                    }else{
                         pdfStatues.setText("Error: Failed to retrieve PDF");
+                        button.setDisable(false);
                    }
+
+                    //information about java timeline from: https://www.educba.com/javafx-timeline/
+            timeline = new Timeline(new KeyFrame(Duration.seconds(5), (ActionEvent event) ->{
+                checkInvoiceStatus(urlString, cuID);
+            }));
+            timeline.setCycleCount(Timeline.INDEFINITE);
+            timeline.play();
 
         }catch (URISyntaxException | IOException | InterruptedException e){
             pdfStatues.setText("Error: "+ e.getMessage());
+            button.setDisable(false);
         }
 
         userId.setText("Customer Id");
     }
 
-    private void checkInvoiceStatus(String url){
+    private void checkInvoiceStatus(String url, String customerID){
 
         try {
             HttpClient client = HttpClient.newHttpClient();
@@ -74,9 +85,32 @@ public class HelloController {
             HttpResponse<String> response = client.send(request,
                     HttpResponse.BodyHandlers.ofString());
 
-            pdfStatues.setText("Got PDF");
+            if(response.statusCode() == 404){
+                pdfStatues.setText("CustomerID "+customerID+": Still waiting for Pdf");
+                downloadlink.setText("waiting for downloadlink");
+                System.out.println(response.statusCode());
+                System.out.println(response);
+            }else if(response.statusCode() == 200){
+                pdfStatues.setText("CustomerID "+customerID+": Got PDF");
+                downloadlink.setText(response.body());
+                System.out.println(response.statusCode());
+                System.out.println(response);
+                button.setDisable(false);
+                timeline.stop();
+            }else {
+                pdfStatues.setText("Error: Failed to retrieve PDF");
+                button.setDisable(false);
+            }
+
+
         } catch (URISyntaxException | IOException | InterruptedException e) {
             System.out.println("Error in invoiceStatusCheck: "+e.getMessage());
+            button.setDisable(false);
         }
     }
+
+
+
+
+
 }

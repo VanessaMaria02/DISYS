@@ -38,6 +38,8 @@ public class PdfGenerator {
         String customerinfo = "Customer: "+customer.getId() + " " + customer.getFirst_name()+ " " + customer.getLast_name();
         String kwhInfo = "Total consumption: "+kwh+" kwh";
 
+        //Information about how to generate a PDF from: https://www.baeldung.com/java-pdf-creation
+
         Document document = new Document();
         PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\vfich\\IdeaProjects\\DISYS\\FileStorage\\invoice_customerID_"+customerID+".pdf"));
 

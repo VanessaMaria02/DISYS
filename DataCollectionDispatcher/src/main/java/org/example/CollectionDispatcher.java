@@ -41,6 +41,7 @@ public class CollectionDispatcher {
         }
         System.out.println("counter:"+counter);
         rabbitmq.send("purple", customerID+";"+counter);
+
     }
 
 }

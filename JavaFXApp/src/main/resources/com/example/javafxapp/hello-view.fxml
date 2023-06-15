@@ -14,7 +14,10 @@
 
   <TextField fx:id="userId" text="Customer Id"/>
 
-  <Button text="Generate Incoice" onAction="#onGetInvoice"/>
+  <Button fx:id="button" text="Generate Incoice" onAction="#onGetInvoice"/>
 
   <Label fx:id="pdfStatues" text="waiting for request"/>
+
+  <TextField fx:id="downloadlink" text="waiting for downloadlink"/>
+
 </VBox>
