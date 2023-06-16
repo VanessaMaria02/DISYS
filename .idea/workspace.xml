@@ -5,33 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c38c0a59-1ece-465c-848c-15b2c88b695a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataCollectionReceiver/src/main/java/org/example/CollectionReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataCollectionDispatcher/src/test/java/org/example/CollectionDispatcherTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PDFGenerator/src/test/java/org/example/PdfGeneratorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StationDataCollector/src/test/java/org/example/StationDataCollectorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataCollectionDispatcher/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataCollectionDispatcher/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataCollectionDispatcher/src/main/java/org/example/CollectionDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCollectionDispatcher/src/main/java/org/example/CollectionDispatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataCollectionDispatcher/src/main/java/org/example/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCollectionDispatcher/src/main/java/org/example/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataCollectionDispatcher/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCollectionDispatcher/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataCollectionDispatcher/src/main/java/org/example/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCollectionDispatcher/src/main/java/org/example/database/Station.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataCollectionDispatcher/src/main/java/org/example/services/rabbitmq.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCollectionDispatcher/src/main/java/org/example/queue/rabbitmq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataCollectionReceiver/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCollectionReceiver/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataCollectionReceiver/src/main/java/org/example/services/rabbitmq.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCollectionReceiver/src/main/java/org/example/queue/rabbitmq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataCollectionDispatcher/src/main/java/org/example/queue/rabbitmq.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCollectionDispatcher/src/main/java/org/example/queue/rabbitmq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataCollectionReceiver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataCollectionReceiver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage/invoice_customerID_0.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/FileStorage/invoice_customerID_1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage/invoice_customerID_1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileStorage/invoice_customerID_11.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileStorage/invoice_customerID_4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage/invoice_customerID_4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaFXApp/src/main/java/com/example/javafxapp/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFXApp/src/main/java/com/example/javafxapp/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFGenerator/src/main/java/org/example/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/PDFGenerator/src/main/java/org/example/database/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFGenerator/src/main/java/org/example/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/PDFGenerator/src/main/java/org/example/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFGenerator/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/PDFGenerator/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFXApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFXApp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFGenerator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PDFGenerator/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PDFGenerator/src/main/java/org/example/PdfGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/PDFGenerator/src/main/java/org/example/PdfGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFGenerator/src/main/java/org/example/services/rabbitmq.java" beforeDir="false" afterPath="$PROJECT_DIR$/PDFGenerator/src/main/java/org/example/queue/rabbitmq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestAPI/src/main/java/com/example/restapi/DownloadLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestAPI/src/main/java/com/example/restapi/DownloadLinkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestAPI/src/main/java/com/example/restapi/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestAPI/src/main/java/com/example/restapi/InvoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestAPI/src/main/java/com/example/restapi/services/rabbitmq.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestAPI/src/main/java/com/example/restapi/queue/rabbitmq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StationDataCollector/src/main/java/org/example/Charge.java" beforeDir="false" afterPath="$PROJECT_DIR$/StationDataCollector/src/main/java/org/example/database/Charge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StationDataCollector/src/main/java/org/example/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/StationDataCollector/src/main/java/org/example/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StationDataCollector/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/StationDataCollector/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestAPI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RestAPI/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StationDataCollector/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/StationDataCollector/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StationDataCollector/src/main/java/org/example/StationCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/StationDataCollector/src/main/java/org/example/StationCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StationDataCollector/src/main/java/org/example/services/rabbitmq.java" beforeDir="false" afterPath="$PROJECT_DIR$/StationDataCollector/src/main/java/org/example/queue/rabbitmq.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +62,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/vfich/IdeaProjects/DISYS/PDFGenerator/src/main/java/org/example",
+    "last_opened_file_path": "C:/Users/vfich/Downloads/testing(2)",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "spring.configuration.checksum": "59560c4044627c61f87e14c62e8440ee",
     "vue.rearranger.settings.migration": "true"
   }
@@ -90,59 +82,7 @@
       <recent name="C:\Users\vfich\IdeaProjects\DISYS\DataCollectionDispatcher\src\main\java\org\example" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.RestApiApplication">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.javafxapp.HelloApplication" />
-      <module name="JavaFXApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.javafxapp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="DataCollectionReceiver" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="PDFGenerator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="DataCollectionDispatcher" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.database.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.CollectionDispatcherTest.ShouldReturnLength3">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="DataCollectionReceiver" />
@@ -182,6 +122,86 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CollectionDispatcherTest.ShouldReturnLength3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DataCollectionDispatcher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CollectionDispatcherTest" />
+      <option name="METHOD_NAME" value="ShouldReturnLength3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PdfGeneratorTest.shouldReturnDefaultCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PDFGenerator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.PdfGeneratorTest" />
+      <option name="METHOD_NAME" value="shouldReturnDefaultCustomer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PdfGeneratorTest.shouldReturnDefaultCustomer2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PDFGenerator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.PdfGeneratorTest" />
+      <option name="METHOD_NAME" value="shouldReturnDefaultCustomer2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PdfGeneratorTest.shouldReturnErrorMessageSyntac" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PDFGenerator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.PdfGeneratorTest" />
+      <option name="METHOD_NAME" value="shouldReturnErrorMessageSyntac" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PdfGeneratorTest.shouldReturnRightCustomre" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PDFGenerator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.PdfGeneratorTest" />
+      <option name="METHOD_NAME" value="shouldReturnRightCustomre" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RestApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="RestAPI" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.restapi.RestApiApplication" />
@@ -191,11 +211,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.Main (3)" />
-        <item itemvalue="Application.Main (2)" />
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CollectionDispatcherTest.ShouldReturnLength3" />
+        <item itemvalue="JUnit.PdfGeneratorTest.shouldReturnDefaultCustomer2" />
+        <item itemvalue="JUnit.PdfGeneratorTest.shouldReturnRightCustomre" />
+        <item itemvalue="JUnit.PdfGeneratorTest.shouldReturnDefaultCustomer" />
+        <item itemvalue="JUnit.PdfGeneratorTest.shouldReturnErrorMessageSyntac" />
       </list>
     </recent_temporary>
   </component>
@@ -213,6 +233,7 @@
       <workItem from="1686767193615" duration="10265000" />
       <workItem from="1686833268752" duration="14831000" />
       <workItem from="1686915672856" duration="10423000" />
+      <workItem from="1686927014383" duration="9480000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.TimeoutException;
 
 public class CollectionDispatcher {
@@ -28,10 +30,33 @@ public class CollectionDispatcher {
 
     //gets all stations from stationdb, and sends a Message for each to the StationDataCollector with the customerID, StationID and DatabaseURL
     //Also send a message to DataCollectionReceiver with customerID and Amount of stations
-    public void getAllStations(String customerID){
+    public int  manageMessages(String customerID){
+
+
+        List<Station> stations = getAllStations();
+        int length = 0;
+
+        if(stations != null){
+            for (Station station: stations) {
+                //creat message
+                String message = customerID + ";" +station.getId() + ";" +station.getDb_url();
+                //send message to StationDataCollector on the green queue
+                rabbitmq.send("green", message);
+            }
+            length = stations.size();
+            //send amount of stations to the DataCollectionReceiver
+            rabbitmq.send("purple", customerID+";"+length);
+        }
+        return length;
+    }
+
+
+    public List<Station> getAllStations(){
         String query = "SELECT * FROM station";
         //counter for counting how many stations their are
-        int counter = 0;
+
+        List<Station> stations = new LinkedList<>();
+
 
         try (
                 Connection conn = Database.getConnection();
@@ -43,19 +68,18 @@ public class CollectionDispatcher {
                 // Get Data for each station
                 int id = rs.getInt("id");
                 String db_url = rs.getString("db_url");
+                double lat = rs.getDouble("lat");
+                double lng = rs.getDouble("lng");
 
-                //creat message
-                String message = customerID + ";" + id + ";" + db_url;
-                //send message to StationDataCollector on the green queue
-                rabbitmq.send("green", message);
-                counter++;
+                stations.add(new Station(id, db_url, lat, lng));
             }
 
         } catch (SQLException e) {
             System.out.println("Error getAllStations: "+e.getMessage());
+            return stations;
         }
-        //send amount of stations to the DataCollectionReceiver
-        rabbitmq.send("purple", customerID+";"+counter);
+
+        return stations;
     }
 
 }

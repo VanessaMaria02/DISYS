@@ -16,7 +16,7 @@ public class PdfGenerator {
     private static org.example.queue.rabbitmq rabbitmq = new rabbitmq();
 
     //generate pdf
-    public void generatePdf(String message) throws DocumentException, FileNotFoundException {
+    public String generatePdf(String message) throws DocumentException, FileNotFoundException {
 
         //split the message into customerId and kwh
         String[] parts = message.split(";");
@@ -29,6 +29,7 @@ public class PdfGenerator {
             kwh = parts[1];
         }else {
             System.out.println("Error: wrong messaging format");
+            return "Error: wrong messaging format";
         }
 
         Customer customer = getCutomerInfo(customerID);
@@ -51,23 +52,27 @@ public class PdfGenerator {
         String kwhInfo = "Total consumption: "+kwh+" kwh";
         String priceKwh = "Total cost: "+kwhPrice+"€";
 
-
-        //Information about how to generate a PDF from: https://www.baeldung.com/java-pdf-creation
-
-        Document document = new Document();
-        PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\vfich\\IdeaProjects\\DISYS\\FileStorage\\invoice_customerID_"+customerID+".pdf"));
-
-        document.open();
         //set font for pdf
         Font font = FontFactory.getFont(FontFactory.COURIER, 16, BaseColor.BLACK);
         //creat paragraph for pdf
         Paragraph para = new Paragraph("Creation Time: "+timestamp + "\n" + customerInfo + "\n" +price+ "\n" +  kwhInfo + "\n" + priceKwh, font);
 
-        document.add(para);
-        document.close();
 
 
-        System.out.println("PDF for "+customerInfo+" generated");
+
+        //Information about how to generate a PDF from: https://www.baeldung.com/java-pdf-creation
+        Document document = new Document();
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\vfich\\IdeaProjects\\DISYS\\FileStorage\\invoice_customerID_"+customerID+".pdf"));
+            document.open();
+            document.add(para);
+            document.close();
+            System.out.println("PDF for "+customerInfo+" generated");
+            return "PDF for "+customerInfo+" generated";
+        } catch (DocumentException | FileNotFoundException e) {
+            System.out.println("Error generating PDF: " + e.getMessage());
+            return "Error generating PDF";
+        }
     }
 
    //gathers customer information from the customer DB
@@ -97,6 +102,7 @@ public class PdfGenerator {
 
         } catch (SQLException e) {
             System.out.println("Error getCustomerInfo: "+e.getMessage());
+            return customer;
         }
         return customer;
     }

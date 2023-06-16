@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.TimeoutException;
 
 public class StationCollector {
@@ -25,7 +27,7 @@ public class StationCollector {
     }
 
 
-    public void getCustomerData(String message){
+    public String getCustomerData(String message){
 
         //splits message into customerId, db_url, and stationID
         String[] parts = message.split(";");
@@ -43,32 +45,24 @@ public class StationCollector {
             System.out.println("db_url: " + db_url);
         }else {
             System.out.println("Error: Wrong messaging format");
+            rabbitmq.send("blue", "0;0");
+            return "Error: Wrong messaging format";
         }
 
-        //SQL Statement for getting alle charges with the same customerID
-        String query = "SELECT * FROM charge WHERE customer_id = "+customerID;
+
+        //get Data from Database
+       List<Charge> charges = getChargeList(customerID, db_url);
 
 
+        //add upp kwH
         double allKwh = 0;
-
-        try (
-                Connection conn = Database.getConnection(db_url);
-                PreparedStatement ps = conn.prepareStatement(query);
-                ResultSet rs = ps.executeQuery()
-        ) {
-
-            while (rs.next()) {
-                //get kwh from station
-                double kwh = rs.getDouble("kwh");
-
-                //add-up all kwh from each charge from the customer
-                allKwh += kwh;
-
+        if(charges != null){
+            for (Charge charge: charges) {
+                allKwh += charge.getKwh();
             }
-
-        } catch (SQLException e) {
-            System.out.println("Error sql getCustomerData: "+e.getMessage());
         }
+
+
 
         //creat message with customerID and the whole kwh amount
         String finalmessage = customerID + ";" + allKwh;
@@ -84,5 +78,39 @@ public class StationCollector {
         //send the message to the PDFGenerator
         rabbitmq.send("blue", finalmessage);
 
+        return finalmessage;
+
+    }
+
+    public List<Charge> getChargeList(String customerId, String db_url){
+        //SQL Statement for getting alle charges with the same customerID
+
+        String query = "SELECT * FROM charge WHERE customer_id = "+customerId;
+
+        List<Charge> charges = new LinkedList<>();
+
+        try (
+                Connection conn = Database.getConnection(db_url);
+                PreparedStatement ps = conn.prepareStatement(query);
+                ResultSet rs = ps.executeQuery()
+        ) {
+
+            while (rs.next()) {
+                //get charges from station
+                int id = rs.getInt("id");
+                double kwh = rs.getDouble("kwh");
+                int customer_id = rs.getInt("customer_id");
+
+                Charge charge = new Charge(id, kwh, customer_id);
+
+                //save charges in List
+                charges.add(charge);
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error sql getCustomerData: "+e.getMessage());
+        }
+        return charges;
     }
 }

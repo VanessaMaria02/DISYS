@@ -49,7 +49,7 @@ public class rabbitmq {
            String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
             System.out.println(" [CollectionDispatcher] Received '" + message + "'");
             //starts the actual dataGathering process
-            collectionDispatcher.getAllStations(message);
+            collectionDispatcher.manageMessages(message);
 
         };
         channel.basicConsume(queue_Name, true, deliverCallback, consumerTag -> { });
