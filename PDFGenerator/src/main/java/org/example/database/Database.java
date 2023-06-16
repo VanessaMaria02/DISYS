@@ -1,4 +1,4 @@
-package org.example;
+package org.example.database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,10 +12,12 @@ public class Database {
     private final static String PASSWORD = "postgres";
 
     public static Connection getConnection() throws SQLException {
+        //starts DatabaseConnection
         return DriverManager.getConnection(getUrl());
     }
 
     private static String getUrl() {
+        //creates the url for the DatabaseConnection
         // jdbc:DRIVER://HOST:PORT/DATABASE_NAME
         // ?user=USERNAME&password=PASSWORD
         return String.format(

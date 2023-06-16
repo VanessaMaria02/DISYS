@@ -1,5 +1,6 @@
-package org.example;
+package org.example.database;
 
+//Class for creating an Charge Object
 public class Charge {
 
     private int id;

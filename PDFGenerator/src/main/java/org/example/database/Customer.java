@@ -1,5 +1,6 @@
-package org.example;
+package org.example.database;
 
+//Class for creating an Customer Object
 public class Customer {
     private int id;
     private String first_name;

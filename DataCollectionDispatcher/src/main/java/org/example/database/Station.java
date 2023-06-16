@@ -1,5 +1,7 @@
-package org.example;
+package org.example.database;
 
+
+//Class for creating an Station Object
 public class Station {
     private int id;
     private String db_url;

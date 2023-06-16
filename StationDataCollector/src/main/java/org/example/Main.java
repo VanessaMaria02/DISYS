@@ -1,15 +1,15 @@
 package org.example;
 
-import org.example.services.rabbitmq;
+import org.example.queue.rabbitmq;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 public class Main {
 
-    private static rabbitmq rabbitmq = new rabbitmq();
-    public static void main(String[] args) throws IOException, TimeoutException {
-        rabbitmq.recv("green");
+    private static StationCollector stationCollector = new StationCollector();
 
+    public static void main(String[] args)  {
+        stationCollector.startWork();
     }
 }
