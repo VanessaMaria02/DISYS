@@ -64,20 +64,21 @@ public class HelloController {
                     if(response.statusCode() == 200){
                         //set the pdfStatues Label
                         pdfStatues.setText("waiting for Pdf");
+                        //information about java timeline from: https://www.educba.com/javafx-timeline/
+
+                        //check every five seconds if a PDF for the customerID is available
+                        timeline = new Timeline(new KeyFrame(Duration.seconds(5), (ActionEvent event) ->{
+                            checkInvoiceStatus(urlString, cuID);
+                        }));
+                        timeline.setCycleCount(Timeline.INDEFINITE);
+                        timeline.play();
                    }else{
                         pdfStatues.setText("Error: Failed to retrieve PDF");
                         //enable the button so a new request can be started
                         button.setDisable(false);
                    }
 
-                    //information about java timeline from: https://www.educba.com/javafx-timeline/
 
-            //check every five seconds if a PDF for the customerID is available
-            timeline = new Timeline(new KeyFrame(Duration.seconds(5), (ActionEvent event) ->{
-                checkInvoiceStatus(urlString, cuID);
-            }));
-            timeline.setCycleCount(Timeline.INDEFINITE);
-            timeline.play();
 
         }catch (URISyntaxException | IOException | InterruptedException e){
             pdfStatues.setText("Error POST HTTP-Request: "+ e.getMessage());

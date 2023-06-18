@@ -15,11 +15,11 @@ public class InvoiceController {
 
    //path to start DataGathering Job
     @PostMapping("/invoices/{id}")
-    public void startDataGathering(@PathVariable String id) {
+    public void startDataGathering(@PathVariable int id) {
         //deleteFile old file with same Customerid
-        deleteFile(id);
+        deleteFile(String.valueOf(id));
         //Send message with customerid to the DataCollectionDispatcher on the red messaging queue
-        rabbitmq.send("red", id);
+        rabbitmq.send("red", String.valueOf(id));
     }
 
 
